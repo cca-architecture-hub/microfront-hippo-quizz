@@ -27,7 +27,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <h1>Stats</h1>
       <Stats data={stats}/>
     </>
   )

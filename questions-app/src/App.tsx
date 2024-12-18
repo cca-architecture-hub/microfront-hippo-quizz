@@ -23,8 +23,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Trivia Questions</h1>
+    <div className="questionContainer">
+      <h1>Question</h1>
       <Question question={question} category={category} />
       <Answer options={options} onAnswer={handleAnswer} />
     </div>

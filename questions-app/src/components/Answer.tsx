@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@/components/ui/button"
 
 type AnswerProps = {
   options: string[];
@@ -6,11 +7,11 @@ type AnswerProps = {
 };
 
 const Answer: React.FC<AnswerProps> = ({ options, onAnswer }) => (
-  <div>
+  <div className="options">
     {options.map((option, index) => (
-      <button key={index} onClick={() => onAnswer(option)}>
+      <Button key={index} onClick={() => onAnswer(option)}>
         {option}
-      </button>
+      </Button>
     ))}
   </div>
 );

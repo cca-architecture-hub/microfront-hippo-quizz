@@ -17,14 +17,7 @@ export const Stats: React.FC<StatsProps> = ({ data }) => {
 
   return (
     <div
-      style={{
-        maxWidth: "300px",
-        margin: "0 auto",
-        border: "2px solid black",
-        padding: "10px",
-        borderRadius: "5px",
-        fontFamily: "Arial, sans-serif",
-      }}
+     className="statsContainer"
     >
       {categories.map((category, index) => (
         <CategoryCard
