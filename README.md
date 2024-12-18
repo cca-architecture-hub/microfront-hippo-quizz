@@ -30,7 +30,7 @@ Follow these steps to get everything up and running:
 
 ### 1️⃣ **Run the backend**
 ```bash
-npm run dev
+npm run start
 ```
 
 ### 2️⃣ **Run all remote applications**
