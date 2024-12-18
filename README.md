@@ -49,7 +49,7 @@ npm run dev
 
 To start the game, make a **POST** request to the following URL:
 
-```http
+```bash
 http://localhost:3000/api/start-game
 ```
 
