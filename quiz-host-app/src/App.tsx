@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorBoundary from "./utils/ErrorBoundary";
 const QuestionsApp = React.lazy(() => import("questionsApp/QuestionsApp"));
 const RankingApp = React.lazy(() => import("rankingApp/RankingApp"));
 const StatsApp = React.lazy(() => import("statsApp/StatsApp"));
@@ -10,13 +11,19 @@ const App = () => (
     </div>
     <div className="containerM">
       <React.Suspense fallback={<div>Loading...</div>}>
-        <StatsApp />
+        <ErrorBoundary>
+          <StatsApp />
+        </ErrorBoundary>
       </React.Suspense>
       <React.Suspense fallback={<div>Loading...</div>}>
-        <QuestionsApp />
+        <ErrorBoundary>
+          <QuestionsApp />
+        </ErrorBoundary>
       </React.Suspense>
       <React.Suspense fallback={<div>Loading...</div>}>
-        <RankingApp />
+        <ErrorBoundary>
+          <RankingApp />
+        </ErrorBoundary>
       </React.Suspense>
     </div>
   </>
