@@ -23,18 +23,18 @@ function initializeCategoryStats() {
 initializeCategoryStats();
 
 function addPlayer(name) {
-  const playerId = uuid.v4();
-  state.players[playerId] = { name, score: 0 };
+  const id = uuid.v4();
+  state.players[id] = { name, score: 0 };
 
   if (Object.keys(state.players).length === 1 && !state.isGameActive) {
     startGame(broadcast);
   }
 
-  return playerId;
+  return id;
 }
 
-function removePlayer(playerId) {
-  delete state.players[playerId];
+function removePlayer(id) {
+  delete state.players[id];
 }
 
 function startRound(broadcast) {
@@ -48,11 +48,11 @@ function startRound(broadcast) {
   state.roundTimer = setTimeout(() => evaluateRound(broadcast), 15000); // 15 segundos
 }
 
-function submitAnswer(playerId, answerIndex) {
-  if (!state.players[playerId] || state.responses[playerId] !== undefined) {
+function submitAnswer(id, answerIndex) {
+  if (!state.players[id] || state.responses[id] !== undefined) {
     return; // Ignora jugadores inexistentes o respuestas repetidas
   }
-  state.responses[playerId] = answerIndex;
+  state.responses[id] = answerIndex;
 }
 
 const getCurrentQuestion = () => {
@@ -64,8 +64,8 @@ function evaluateRound(broadcast) {
 
   const correctAnswer = state.currentQuestion.answer;
 
-  Object.entries(state.responses).forEach(([playerId, answerIndex]) => {
-    const player = state.players[playerId];
+  Object.entries(state.responses).forEach(([id, answerIndex]) => {
+    const player = state.players[id];
     if (!player) return;
 
     if (answerIndex === correctAnswer) {

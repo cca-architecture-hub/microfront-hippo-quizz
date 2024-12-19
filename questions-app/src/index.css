@@ -28,9 +28,11 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 50vw;
+  width: 50vw;;
+  min-height: 55vh;
   margin: auto;
   border: 2px solid black;
+  border-radius: 5px;
   padding: 2rem;
  }
 

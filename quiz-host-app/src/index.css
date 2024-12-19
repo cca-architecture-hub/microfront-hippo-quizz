@@ -12,12 +12,15 @@ h1 {
 }
 
 .header{
-  margin-bottom: 2rem;
+  display: flex;
+  padding: 2rem;
+  width: 100vw;
+  justify-content: space-between;
 }
-
 .containerM{
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
+  padding: 2rem;
 }
 
 @layer base {

@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const sendAnswer = async (answer: string): Promise<void> => {
   await fetch(`${BASE_URL}/answer`, {

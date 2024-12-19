@@ -10,18 +10,18 @@ router.post("/join", (req, res) => {
     return res.status(400).send({ error: "Name is required." });
   }
 
-  const playerId = gameService.addPlayer(name);
-  res.status(200).send({ playerId, message: "Player added successfully." });
+  const id = gameService.addPlayer(name);
+  res.status(200).send({ id, message: "Player added successfully." });
 });
 
 router.post("/answer", (req, res) => {
-  const { playerId, answerIndex } = req.body;
+  const { id, answerIndex } = req.body;
 
-  if (!playerId || answerIndex === undefined) {
-    return res.status(400).send({ error: "PlayerId and AnswerIndex are required." });
+  if (!id || answerIndex === undefined) {
+    return res.status(400).send({ error: "Player Id and AnswerIndex are required." });
   }
 
-  gameService.submitAnswer(playerId, answerIndex);
+  gameService.submitAnswer(id, answerIndex);
   res.status(200).send({ message: "Answer submitted." });
 });
 

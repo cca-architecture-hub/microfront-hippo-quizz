@@ -15,23 +15,23 @@ function initializeSocketService(server) {
     console.log("Nuevo cliente conectado:", socket.id);
 
     socket.on("join", (name) => {
-      const playerId = gameService.addPlayer(name);
-      socket.playerId = playerId; // Asignar el ID al socket
-      socket.emit("assigned_id", { playerId });
-      console.log(`Jugador ${name} unido con ID ${playerId}`);
+      const id = gameService.addPlayer(name);
+      socket.id = id; // Asignar el ID al socket
+      socket.emit("assigned_id", { id });
+      console.log(`Jugador ${name} unido con ID ${id}`);
     });
 
     socket.on("answer", (data) => {
-      if (socket.playerId) {
+      if (socket.id) {
         const { answerIndex } = data;
-        gameService.submitAnswer(socket.playerId, answerIndex);
+        gameService.submitAnswer(socket.id, answerIndex);
       }
     });
 
     socket.on("disconnect", () => {
-      if (socket.playerId) {
-        console.log(`Jugador con ID ${socket.playerId} desconectado`);
-        gameService.removePlayer(socket.playerId);
+      if (socket.id) {
+        console.log(`Jugador con ID ${socket.id} desconectado`);
+        gameService.removePlayer(socket.id);
       }
     });
   });

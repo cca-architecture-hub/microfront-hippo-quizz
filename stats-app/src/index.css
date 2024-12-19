@@ -14,8 +14,7 @@ h1 {
 }
 
 .statsContainer {
-  max-width: 25vw;
-  margin: 0 auto;
+  width: 20vw;
   border: 2px solid black;
   padding: 1rem;
   border-radius: 5px;

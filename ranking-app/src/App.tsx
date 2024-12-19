@@ -1,10 +1,11 @@
 import './App.css'
+import { Ranking } from './components/Ranking'
 
 function App() {
 
   return (
     <>
-      <h1>Ranking App</h1>
+      <Ranking />
     </>
   )
 }
