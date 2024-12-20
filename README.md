@@ -40,7 +40,7 @@ npm run serve
 
 ### 3️⃣ **Run the main host application**
 ```bash
-npm run dev
+npm run serve
 ```
 
 ---
