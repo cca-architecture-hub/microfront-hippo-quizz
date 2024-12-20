@@ -13,7 +13,7 @@ const initialData = {
     Entertainment: { total: 0, correct: 0 },
     Sports: { total: 0, correct: 0 },
     Technology: { total: 0, correct: 0 },
-  },
+  }
 } as StatsModel;
 
 const App: React.FC = () => {

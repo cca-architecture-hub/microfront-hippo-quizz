@@ -4,40 +4,15 @@ export interface StatsModel {
 }
 
 export interface CategoryStats {
-  Science: Science;
-  History: History;
-  Geography: Geography;
-  Entertainment: Entertainment;
-  Sports: Sports;
-  Technology: Technology;
+  Science: Category;
+  History: Category;
+  Geography: Category;
+  Entertainment: Category;
+  Sports: Category;
+  Technology: Category;
 }
 
-export interface Science {
-  total: number;
-  correct: number;
-}
-
-export interface History {
-  total: number;
-  correct: number;
-}
-
-export interface Geography {
-  total: number;
-  correct: number;
-}
-
-export interface Entertainment {
-  total: number;
-  correct: number;
-}
-
-export interface Sports {
-  total: number;
-  correct: number;
-}
-
-export interface Technology {
+export interface Category {
   total: number;
   correct: number;
 }

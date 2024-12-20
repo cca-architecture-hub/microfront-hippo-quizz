@@ -12,6 +12,9 @@ export default defineConfig({
       exposes: {
         "./QuestionsApp": "./src/App.tsx",
       },
+      remotes: {
+        store:'http://localhost:5000/assets/remoteEntry.js'
+      },
       shared: ["react", "react-dom"],
     }),
   ],

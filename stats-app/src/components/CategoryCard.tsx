@@ -7,7 +7,7 @@ interface CategoryCardProps {
   amount: string;
 }
 
-export const CategoryCard: React.FC<CategoryCardProps> = ({ name, percentage, best, amount }) => {
+export const CategoryCard: React.FC<CategoryCardProps> = ({ name, percentage, amount }) => {
     return (
       <div
         style={{
@@ -22,10 +22,6 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ name, percentage, be
       >
         <div>
           <h3 style={{ margin: "0" }}>{name}</h3>
-          <p style={{ margin: "5px 0", fontSize: "14px" }}>
-            <strong>Best: </strong>
-            {best}
-          </p>
         </div>
         <div>
         <h3 style={{ margin: "0" }}>{percentage}%</h3>

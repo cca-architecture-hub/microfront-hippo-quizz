@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build-and-serve": "tsc -b && vite build && vite preview --port 5000 --strictPort",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview --port 5000 --strictPort"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.1.4",

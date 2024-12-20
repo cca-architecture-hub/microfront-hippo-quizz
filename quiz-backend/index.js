@@ -24,6 +24,7 @@ const io = initializeSocketService(server);
 setInterval(() => {
   const question = gameService.getCurrentQuestion();
   const stats = gameService.getStats();
+  const rank = gameService.getRank();
 
   if (question) {
     io.emit("question", question);
@@ -32,6 +33,11 @@ setInterval(() => {
   if (stats) {
     io.emit("stats", stats);
   }
+
+  if (rank) {
+    io.emit("rank", rank);
+  }
+
 }, config.broadcastInterval);
 
 server.listen(config.port, () => {

@@ -50,7 +50,7 @@ function startRound(broadcast) {
 
 function submitAnswer(id, answerIndex) {
   if (!state.players[id] || state.responses[id] !== undefined) {
-    return; // Ignora jugadores inexistentes o respuestas repetidas
+    return;
   }
   state.responses[id] = answerIndex;
 }
@@ -119,6 +119,10 @@ function resetGame() {
   clearTimeout(state.roundTimer);
 }
 
+function getRank() {
+  return Object.values(state.players).sort((a, b) => b.score - a.score);
+}
+
 module.exports = {
   addPlayer,
   removePlayer,
@@ -129,5 +133,6 @@ module.exports = {
   evaluateRound,
   getStats,
   resetGame,
-  getCurrentQuestion
+  getCurrentQuestion,
+  getRank
 };

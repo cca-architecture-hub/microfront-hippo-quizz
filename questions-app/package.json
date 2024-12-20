@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 5001 --strictPort",
     "build": "tsc -b && vite build",
+    "build-and-serve": "tsc -b && vite build && vite preview --port 5001 --strictPort",
     "lint": "eslint .",
     "preview": "vite preview --port 5001 --strictPort",
     "serve": "vite preview --port 5001 --strictPort"

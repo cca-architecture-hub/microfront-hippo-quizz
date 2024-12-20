@@ -3,12 +3,14 @@ import Question from "./components/Question";
 import Answer from "./components/Answer";
 import { subscribeToQuestions } from "./services/socket";
 import { sendAnswer } from "./services/api";
+import useUserStore from "store/store";
 
 const App: React.FC = () => {
   const [question, setQuestion] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [options, setOptions] = useState<string[]>([]);
-
+  const {user}  = useUserStore();
+  
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     subscribeToQuestions((data: any) => {
@@ -18,8 +20,9 @@ const App: React.FC = () => {
     });
   }, []);
 
-  const handleAnswer = (answer: string) => {
-    sendAnswer(answer).catch(console.error);
+  const handleAnswer = (answerIndex: number) => {
+    const userId = user.id || '';
+    sendAnswer(answerIndex, userId).catch(console.error);
   };
 
   return (

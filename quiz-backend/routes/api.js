@@ -29,8 +29,22 @@ router.get("/stats", (req, res) => {
   res.status(200).json(gameService.getStats());
 });
 
+router.get("/rank", (req, res) => {
+  res.status(200).json(gameService.getRank());
+});
+
 router.post("/start-game", (req, res) => {
   gameService.startGame(broadcast);
+  res.status(200).json({ message: "Juego iniciado" });
+});
+
+router.post("/reset-game", (req, res) => {
+  gameService.resetGame(broadcast);
+  res.status(200).json({ message: "Juego iniciado" });
+});
+
+router.post("/stop-game", (req, res) => {
+  gameService.stopGame(broadcast);
   res.status(200).json({ message: "Juego iniciado" });
 });
 

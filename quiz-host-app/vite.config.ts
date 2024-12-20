@@ -13,7 +13,10 @@ export default defineConfig({
         rankingApp: "http://localhost:5002/assets/remoteEntry.js",
         statsApp: "http://localhost:5003/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      exposes: {
+        './store': './src/store'
+      },
+      shared: ["react", "react-dom", "zustand"],
     }),
   ],
   resolve: {
