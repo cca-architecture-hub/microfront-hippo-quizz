@@ -4,7 +4,7 @@ declare module 'questionsApp/QuestionsApp' {
   }
 
 declare module 'rankingApp/RankingApp' {
-    const RankingApp: React.ComponentType;
+    const RankingApp: React.FC<{player?: string}>;
     export default RankingApp;
 }
 

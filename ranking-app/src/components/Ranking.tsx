@@ -2,9 +2,10 @@ import { RankModel } from "@/types/RankModel";
 
 interface RankingProps {
   data: RankModel | undefined;
+  player?: string;
 }
 
-export const Ranking: React.FC<RankingProps> = ({ data }) => {
+export const Ranking: React.FC<RankingProps> = ({ data, player }) => {
   const users = data
     ? Object.entries(data).map(([id, user]) => ({ id, ...user }))
     : [];
@@ -15,6 +16,7 @@ export const Ranking: React.FC<RankingProps> = ({ data }) => {
         <ul>
           {users.map((user, index) => (
             <li key={user.id}>
+              {player && player === user.id ? "->" : ""}
               #{index + 1} {user.name} - {user.score} puntos
             </li>
           ))}

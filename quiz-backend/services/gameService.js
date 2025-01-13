@@ -1,5 +1,6 @@
 const uuid = require("uuid");
 const questions = require("../utils/questions");
+const {roundTime} = require("../config/config");
 
 const state = {
   players: {},
@@ -45,7 +46,7 @@ function startRound(broadcast) {
 
   broadcast({ type: "NEW_QUESTION", question: state.currentQuestion });
 
-  state.roundTimer = setTimeout(() => evaluateRound(broadcast), 15000); // 15 segundos
+  state.roundTimer = setTimeout(() => evaluateRound(broadcast), roundTime);
 }
 
 function submitAnswer(id, answerIndex) {
@@ -56,7 +57,10 @@ function submitAnswer(id, answerIndex) {
 }
 
 const getCurrentQuestion = () => {
-  return state.currentQuestion;
+  return {
+    ...state.currentQuestion,
+    roundTime,
+  };
 };
 
 function evaluateRound(broadcast) {

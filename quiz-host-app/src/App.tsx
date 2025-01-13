@@ -11,7 +11,8 @@ const StatsApp = React.lazy(() => import("statsApp/StatsApp"));
 
 const App = () => {
   const setUser = useUserStore((state: UserStore) => state.setUser);
-
+  const {user}  = useUserStore();
+  console.log('User:', user);
   const handleJoin = (name: string) => {
     joinUser(name)
       .then((res) => {
@@ -43,7 +44,7 @@ const App = () => {
         </React.Suspense>
         <React.Suspense fallback={<div>Loading...</div>}>
           <ErrorBoundary>
-            <RankingApp />
+            <RankingApp player={user.id?.toString() ?? ''}/>
           </ErrorBoundary>
         </React.Suspense>
       </div>
