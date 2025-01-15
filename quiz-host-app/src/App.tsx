@@ -3,7 +3,7 @@ import ErrorBoundary from "./utils/ErrorBoundary";
 import { Separator } from "@/components/ui/separator";
 import { Join } from "./components/Join/Join";
 import { joinUser } from "./services/api";
-import useUserStore, { UserStore } from './store';
+import useUserStore, { UserStore } from "./store";
 
 const QuestionsApp = React.lazy(() => import("questionsApp/QuestionsApp"));
 const RankingApp = React.lazy(() => import("rankingApp/RankingApp"));
@@ -11,16 +11,13 @@ const StatsApp = React.lazy(() => import("statsApp/StatsApp"));
 
 const App = () => {
   const setUser = useUserStore((state: UserStore) => state.setUser);
-  const {user}  = useUserStore();
-  console.log('User:', user);
   const handleJoin = (name: string) => {
     joinUser(name)
       .then((res) => {
-        console.log('Respuesta del servidor:', res);
-        setUser({id: res.id, name: name});
+        setUser({ id: res.id, name: name });
       })
       .catch((error) => {
-        console.error('Error al unirse:', error);
+        console.error("Error al unirse:", error);
       });
   };
 
@@ -44,7 +41,7 @@ const App = () => {
         </React.Suspense>
         <React.Suspense fallback={<div>Loading...</div>}>
           <ErrorBoundary>
-            <RankingApp player={user.id?.toString() ?? ''}/>
+            <RankingApp />
           </ErrorBoundary>
         </React.Suspense>
       </div>

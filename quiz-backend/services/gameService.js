@@ -124,7 +124,9 @@ function resetGame() {
 }
 
 function getRank() {
-  return Object.values(state.players).sort((a, b) => b.score - a.score);
+  return Object.entries(state.players)
+  .map(([id, player]) => ({ id, ...player }))
+  .sort((a, b) => b.score - a.score);
 }
 
 module.exports = {

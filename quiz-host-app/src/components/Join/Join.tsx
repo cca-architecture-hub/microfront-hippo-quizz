@@ -19,7 +19,7 @@ export const Join: React.FC<JoinProps> = ({ onJoin }) => {
   const user = useUserStore((state: UserStore) => state.user);
 
   useEffect(() => {
-    console.log('User:', user);
+    document.dispatchEvent(new CustomEvent("ADD_USER", { detail: user }));
   }, [user]);
 
   return user.id ? (
