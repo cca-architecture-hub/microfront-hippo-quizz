@@ -3,6 +3,8 @@
 
 Welcome to our **Trivia App**! Below you'll find the different components of our system and how to run them effortlessly.
 
+**Note**: The only thing you need to get this application running is having **npm** installed on your machine.
+
 ---
 
 ## 🧩 **Project Components**
