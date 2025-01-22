@@ -27,10 +27,6 @@ function addPlayer(name) {
   const id = uuid.v4();
   state.players[id] = { name, score: 0 };
 
-  if (Object.keys(state.players).length === 1 && !state.isGameActive) {
-    startGame(broadcast);
-  }
-
   return id;
 }
 
