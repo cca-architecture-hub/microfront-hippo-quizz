@@ -18,6 +18,9 @@
     "uuid": "^11.0.3",
     "ws": "^8.18.0"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "devDependencies": {
     "nodemon": "^2.0.15"
   }

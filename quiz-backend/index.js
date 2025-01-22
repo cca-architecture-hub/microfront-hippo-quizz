@@ -18,6 +18,9 @@ app.options('*', cors());
 app.use(bodyParser.json());
 app.use("/api", routes);
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
 const io = initializeSocketService(server);
 
@@ -40,6 +43,7 @@ setInterval(() => {
 
 }, config.broadcastInterval);
 
-server.listen(config.port, () => {
-  console.log(`Servidor corriendo en http://localhost:${config.port}`);
+const PORT = process.env.PORT || config.port;
+server.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
