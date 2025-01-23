@@ -130,11 +130,9 @@ module.exports = {
   removePlayer,
   startGame,
   stopGame,
-  startRound,
-  submitAnswer,
-  evaluateRound,
-  getStats,
   resetGame,
   getCurrentQuestion,
+  submitAnswer,
+  getStats,
   getRank
 };

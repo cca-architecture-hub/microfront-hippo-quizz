@@ -20,7 +20,7 @@ export const Ranking: React.FC<RankingProps> = ({ data, player }) => {
           {users.map((user, index) => (
             <li key={user.id}
             style={{
-              fontWeight: player && player === user.id ? 700 : 400 // Cambia el peso de la fuente según la condición
+              fontWeight: player && player === user.id ? 700 : 400
             }}
             >
               #{index + 1} {user.name} - {user.score} puntos

@@ -4,5 +4,5 @@ interface UserData {
 }
 
 export interface RankModel {
-  [key: string]: UserData; // Las claves son strings dinámicas
+  [key: string]: UserData;
 }

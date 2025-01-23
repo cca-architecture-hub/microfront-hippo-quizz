@@ -10,9 +10,9 @@ const server = http.createServer(app);
 const cors = require('cors');
 
 app.use(cors({
-  origin: '*', // Permite todos los orígenes
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'] // Cabeceras permitidas
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.options('*', cors());
 app.use(bodyParser.json());

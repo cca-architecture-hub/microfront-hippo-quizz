@@ -17,7 +17,7 @@ const App = () => {
         setUser({ id: res.id, name: name });
       })
       .catch((error) => {
-        console.error("Error al unirse:", error);
+        console.error("Join error:", error);
       });
   };
 

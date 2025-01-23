@@ -35,17 +35,17 @@ router.get("/rank", (req, res) => {
 
 router.post("/start-game", (req, res) => {
   gameService.startGame(broadcast);
-  res.status(200).json({ message: "Juego iniciado" });
+  res.status(200).json({ message: "The game has started" });
 });
 
 router.post("/reset-game", (req, res) => {
   gameService.resetGame(broadcast);
-  res.status(200).json({ message: "Juego iniciado" });
+  res.status(200).json({ message: "The game has reseted" });
 });
 
 router.post("/stop-game", (req, res) => {
   gameService.stopGame(broadcast);
-  res.status(200).json({ message: "Juego iniciado" });
+  res.status(200).json({ message: "The game has stopped" });
 });
 
 module.exports = router;

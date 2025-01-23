@@ -20,7 +20,7 @@ function initializeSocketService(server) {
 
     socket.on("join", (name) => {
       const id = gameService.addPlayer(name);
-      socket.id = id; // Asignar el ID al socket
+      socket.id = id;
       socket.emit("assigned_id", { id });
       console.log(`Jugador ${name} unido con ID ${id}`);
     });

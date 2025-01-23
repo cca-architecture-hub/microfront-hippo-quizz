@@ -11,7 +11,7 @@ export const Stats: React.FC<StatsProps> = ({ data }) => {
         ([name, stats]) => {
           const percentage = data.totalQuestions !== 0 ? ((stats.total / data.totalQuestions) * 100).toFixed(0) : 0;
           const amount = stats.total;
-          return { name, percentage, best: stats.best, amount }; // "Best" es estático por ahora
+          return { name, percentage, best: stats.best, amount };
         }
       );
 
