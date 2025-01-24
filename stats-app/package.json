@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite --port 5003 --strictPort",
     "build": "tsc -b && vite build",
+    "build:dev": "tsc -b && vite build --mode development",
     "build:prod": "NODE_ENV=production tsc -b && vite build && npm-build-zip --source=dist/",
-    "build-and-serve": "tsc -b && vite build && vite preview --port 5003 --strictPort",
+    "build-and-serve": "tsc -b && vite build --mode development && vite preview --port 5003 --strictPort",
     "lint": "eslint .",
     "preview": "vite preview --port 5003 --strictPort",
     "serve": "vite preview --port 5003 --strictPort"
