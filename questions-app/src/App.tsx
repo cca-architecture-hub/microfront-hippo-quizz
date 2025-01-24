@@ -58,7 +58,13 @@ const App: React.FC = () => {
     const userId = user.id || '';
     sendAnswer(answerIndex, userId).catch(console.error);
   };
-
+  if (!question) {
+    return (
+      <div className="questionContainer">
+        <h1>Waiting for questions...</h1>
+      </div>
+    );
+  }
   return (
     <div className="questionContainer">
       <h1>Question</h1>

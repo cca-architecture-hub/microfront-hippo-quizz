@@ -44,6 +44,6 @@ setInterval(() => {
 }, config.broadcastInterval);
 
 const PORT = process.env.PORT || config.port;
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
 });

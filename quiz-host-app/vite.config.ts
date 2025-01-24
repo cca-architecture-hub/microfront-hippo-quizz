@@ -15,9 +15,9 @@ export default defineConfig(({ mode }) => {
       federation({
         name: "quizHostApp",
         remotes: {
-          questionsApp: URL_QUESTIONS_APP,
-          rankingApp: URL_RANKING_APP,
-          statsApp: URL_STATS_APP,
+          questionsApp: `${URL_QUESTIONS_APP}/assets/remoteEntry.js`,
+          rankingApp: `${URL_RANKING_APP}/assets/remoteEntry.js`,
+          statsApp: `${URL_STATS_APP}/assets/remoteEntry.js`,
         },
         exposes: {
           "./store": "./src/store",

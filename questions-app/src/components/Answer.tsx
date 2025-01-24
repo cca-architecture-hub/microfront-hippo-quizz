@@ -19,6 +19,10 @@ const Answer: React.FC<AnswerProps> = ({ options, onAnswer }) => {
     setSubmited(answerIndex);    
   };
 
+  if (!options) {
+    return null;
+  }
+  
   return (
   <div className="options">
     {options.map((option, index) => (
